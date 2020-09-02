@@ -23,12 +23,19 @@ const Search = () => {
     search();
   }, [term]);
 
-  const renderedResults = results.map((results, index) => {
+  const renderedResults = results.map((result, index) => {
     return (
       <div className='item' key={index}>
+        <div className='right floated content'>
+          <a
+            className='ui button'
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}>
+            Go
+          </a>
+        </div>
         <div className='content'>
-          <div className='header'>{results.title}</div>
-          {results.snippet}
+          <div className='header'>{result.title}</div>
+          {result.snippet}
         </div>
       </div>
     );
