@@ -19,18 +19,23 @@ const Search = () => {
 
       setResults(data.query.search);
     };
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        console.log("SEARCH");
-        search();
-      }
-    }, 500);
 
-    return () => {
-      console.log("CLEANUP");
-      clearTimeout(timeoutId);
-    };
-  }, [term]);
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          console.log("SEARCH");
+          search();
+        }
+      }, 500);
+
+      return () => {
+        console.log("CLEANUP");
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [results.length, term]);
 
   const renderedResults = results.map((result, index) => {
     return (
