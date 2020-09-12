@@ -19,6 +19,8 @@
 9. useLayoutEffect
 10. useDebugValue
 
+### Event Bubbling
+
 ## External Packages and API
 
 - Wikipedia API
