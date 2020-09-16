@@ -8,7 +8,7 @@ const options = [
   },
   {
     label: "Afrikans",
-    value: "ar",
+    value: "af",
   },
   {
     label: "Arbic",
